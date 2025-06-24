@@ -1,0 +1,119 @@
+import React, { useState, useEffect } from 'react';
+import Section from '../components/ui/Section';
+import ProductGrid from '../components/ui/ProductGrid';
+import WhatsAppButton from '../components/ui/WhatsAppButton';
+import { Product } from '../types';
+import { getAllProducts } from '../data/products';
+
+const Products: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  
+  useEffect(() => {
+    // Fetch all products
+    const allProducts = getAllProducts();
+    setProducts(allProducts);
+    setFilteredProducts(allProducts);
+  }, []);
+  
+  // Get unique categories
+  const categories = ['all', ...new Set(products.map(product => product.category))].sort();
+  
+  const filterByCategory = (category: string) => {
+    setActiveCategory(category);
+    
+    if (category === 'all') {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(products.filter(product => product.category === category));
+    }
+  };
+  
+  const categoryButtonClasses = (category: string) => `
+    px-5 py-2 rounded-md font-sans text-sm transition-all
+    ${activeCategory === category 
+      ? 'bg-betty-brown text-white' 
+      : 'bg-white border border-gray-200 text-gray-700 hover:border-betty-brown'}
+  `;
+  
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative py-40 bg-cover bg-center" style={{ 
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+      }}>
+        <div className="container mx-auto px-4 relative z-10 text-white text-center">
+          <h1 className="font-playfair text-4xl md:text-6xl font-bold mb-4">
+            Nuestros Productos
+          </h1>
+          <p className="font-sans text-lg max-w-2xl mx-auto">
+            Descubre nuestra variedad de deliciosas creaciones artesanales
+          </p>
+          <div className="w-24 h-1 bg-white mx-auto mt-6"></div>
+        </div>
+      </section>
+      
+      {/* Products Section */}
+      <Section type="primary" fullWidth={false}>
+        {/* Category filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={categoryButtonClasses(category)}
+              onClick={() => filterByCategory(category)}
+            >
+              {category === 'all' ? 'Todos' : category}
+            </button>
+          ))}
+        </div>
+        
+        {/* Products grid */}
+        {filteredProducts.length > 0 ? (
+          <ProductGrid products={filteredProducts} type="betty" />
+        ) : (
+          <div className="text-center py-12">
+            <p className="font-sans text-gray-600">No se encontraron productos en esta categoría.</p>
+          </div>
+        )}
+      </Section>
+      
+      {/* Custom Orders Section */}
+      <Section 
+        title="Pedidos Personalizados" 
+        subtitle="¿Tienes una idea especial en mente? Podemos hacerla realidad"
+        type="secondary"
+      >
+        <div className="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
+          <div className="md:w-1/2">
+            <img 
+              src="https://images.pexels.com/photos/7525180/pexels-photo-7525180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              alt="Pedidos personalizados" 
+              className="rounded-lg shadow-md w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="font-playfair text-2xl font-semibold mb-4 text-betty-brown">Creaciones únicas para ocasiones especiales</h3>
+            <p className="font-sans text-gray-700 mb-4">
+              Además de nuestro catálogo regular, ofrecemos servicios de repostería personalizada para eventos como bodas, cumpleaños, bautizos y celebraciones corporativas.
+            </p>
+            <p className="font-sans text-gray-700 mb-6">
+              Nuestro equipo trabajará contigo para diseñar la creación perfecta que se ajuste a tus necesidades, gustos y presupuesto.
+            </p>
+            <a 
+              href="/contacto" 
+              className="inline-block bg-betty-brown hover:bg-betty-dark-brown text-white font-sans px-6 py-3 rounded-md transition-colors mt-2"
+            >
+              Solicitar presupuesto
+            </a>
+          </div>
+        </div>
+      </Section>
+      
+      <WhatsAppButton phoneNumber="600123456" type="betty" />
+    </>
+  );
+};
+
+export default Products;
