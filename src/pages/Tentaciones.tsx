@@ -147,16 +147,16 @@ const Tentaciones: React.FC = () => {
       }}>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">
-            Catering para Eventos
+            Productos por Mayor
           </h2>
           <p className="font-geist text-white text-lg mb-8 max-w-2xl mx-auto">
-            Ofrecemos servicio de catering con nuestra selección de empanadas y productos de panadería para eventos corporativos y celebraciones especiales.
+            Vendemos productos por mayor a cafeterías y locales comerciales. Ofrecemos empanadas y productos de panadería de alta calidad, elaborados artesanalmente y a precios competitivos para su negocio.
           </p>
           <a
             href="/contacto"
             className="bg-white hover:bg-gray-100 text-black font-geist px-8 py-3 rounded-md transition-colors inline-block"
           >
-            Consultar disponibilidad
+            Solicitar información
           </a>
         </div>
       </section>

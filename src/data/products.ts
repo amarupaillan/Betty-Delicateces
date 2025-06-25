@@ -279,9 +279,9 @@ export const getAllProducts = (): Product[] => {
   return products;
 };
 
-// Get Tentaciones products
+// Get Tentaciones products - only empanadas
 export const getTentacionesProducts = (): Product[] => {
-  return products.filter(product => product.isTentacion);
+  return products.filter(product => product.category === 'Empanadas');
 };
 
 // Get featured products

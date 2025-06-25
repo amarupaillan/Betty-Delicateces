@@ -1,101 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Instagram, Facebook, Clock } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import Logo from '../ui/Logo';
 
 const Footer: React.FC = () => {
   const footerClasses = 'bg-white border-t border-gray-200 text-gray-800';
   
-  const headingClasses = 'font-geist text-lg font-medium mb-4 text-black';
   const linkClasses = 'font-geist text-gray-600 hover:text-black transition-colors duration-300';
   
   return (
-    <footer className={`${footerClasses} py-12`}>
+    <footer className={`${footerClasses} py-8`}>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-6 md:mb-0">
             <Logo />
-            <p className="mt-4 font-geist text-sm text-gray-600">
-              Cafetería y panadería artesanal con productos elaborados con amor y los mejores ingredientes desde 2015.
+            <p className="mt-2 font-geist text-sm text-gray-600 max-w-xs">
+              Cafetería y panadería artesanal con productos elaborados con amor y los mejores ingredientes.
             </p>
           </div>
           
-          <div>
-            <h3 className={headingClasses}>Navegación</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className={linkClasses}>Inicio</Link></li>
-              <li><Link to="/productos" className={linkClasses}>Productos</Link></li>
-              <li><Link to="/tentaciones" className={linkClasses}>Tentaciones de la Reina</Link></li>
-              <li><Link to="/contacto" className={linkClasses}>Contacto</Link></li>
-            </ul>
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6 mb-6 md:mb-0">
+            <Link to="/" className={linkClasses}>Inicio</Link>
+            <Link to="/productos" className={linkClasses}>Productos</Link>
+            <Link to="/tentaciones" className={linkClasses}>Tentaciones de la Reina</Link>
+            <Link to="/contacto" className={linkClasses}>Contacto</Link>
           </div>
           
-          <div>
-            <h3 className={headingClasses}>Horarios</h3>
-            <ul className="space-y-2 font-geist text-sm text-gray-600">
-              <li className="flex items-center">
-                <Clock size={16} className="mr-2 text-gray-400" />
-                <span>Lunes a Viernes: 9:00 - 19:00</span>
-              </li>
-              <li className="flex items-center">
-                <Clock size={16} className="mr-2 text-gray-400" />
-                <span>Sábados: 10:00 - 14:00</span>
-              </li>
-              <li className="flex items-center">
-                <Clock size={16} className="mr-2 text-gray-400" />
-                <span>Domingos: Cerrado</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className={headingClasses}>Contacto</h3>
-            <ul className="space-y-3 font-geist text-sm text-gray-600">
-              <li>
-                <a 
-                  href="tel:+56600123456" 
-                  className="flex items-center hover:text-black transition-colors duration-300"
-                >
-                  <Phone size={16} className="mr-2 text-gray-400" />
-                  <span>+56 600 123 456</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="mailto:info@bettydelicateces.com" 
-                  className="flex items-center hover:text-black transition-colors duration-300"
-                >
-                  <Mail size={16} className="mr-2 text-gray-400" />
-                  <span>info@bettydelicateces.com</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:text-black transition-colors duration-300"
-                >
-                  <Instagram size={16} className="mr-2 text-gray-400" />
-                  <span>@BettyDelicateces</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:text-black transition-colors duration-300"
-                >
-                  <Facebook size={16} className="mr-2 text-gray-400" />
-                  <span>Betty Delicateces</span>
-                </a>
-              </li>
-            </ul>
+          <div className="flex space-x-4">
+            <a 
+              href="tel:+56600123456" 
+              className="text-gray-600 hover:text-black transition-colors duration-300"
+              aria-label="Teléfono"
+            >
+              <Phone size={20} />
+            </a>
+            <a 
+              href="mailto:info@bettydelicateces.com" 
+              className="text-gray-600 hover:text-black transition-colors duration-300"
+              aria-label="Email"
+            >
+              <Mail size={20} />
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-black transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-black transition-colors duration-300"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center font-geist text-sm text-gray-500">
+        <div className="border-t border-gray-200 mt-6 pt-6 text-center font-geist text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Betty Delicateces. Todos los derechos reservados.</p>
         </div>
       </div>

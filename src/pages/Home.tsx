@@ -32,13 +32,13 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-600">
             <Link
               to="/productos"
-              className="bg-brand-pink hover:bg-brand-pink/90 text-white font-geist px-6 py-3 rounded-md transition-colors"
+              className="bg-black hover:bg-black/80 text-white font-geist px-6 py-3 rounded-md transition-colors"
             >
               Ver Productos
             </Link>
             <Link
               to="/contacto"
-              className="bg-white hover:bg-gray-100 text-black font-geist px-6 py-3 rounded-md transition-colors"
+              className="bg-white hover:bg-white/90 text-black font-geist px-6 py-3 rounded-md transition-colors border border-gray-200"
             >
               Contacto
             </Link>
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
             </p>
             <Link 
               to="/productos" 
-              className="inline-flex items-center font-geist text-black hover:text-brand-pink transition-colors"
+              className="inline-flex items-center font-geist text-black hover:text-gray-700 transition-colors"
             >
               Descubre nuestros productos
               <ArrowRight size={16} className="ml-2" />
@@ -110,7 +110,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contacto"
-            className="bg-white hover:bg-gray-100 text-black font-geist px-8 py-3 rounded-md transition-colors inline-block"
+            className="bg-white hover:bg-white/90 text-black font-geist px-8 py-3 rounded-md transition-colors inline-block border border-gray-200"
           >
             Solicitar información
           </Link>
