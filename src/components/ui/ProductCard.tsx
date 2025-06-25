@@ -11,13 +11,13 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product, onView, type }) => {
   const cardClasses = "group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md transform hover:-translate-y-1";
   
-  const buttonClasses = "absolute bottom-4 right-4 rounded-md p-2 transition-all duration-300 bg-betty-brown text-white hover:bg-betty-dark-brown";
+  const buttonClasses = "absolute bottom-4 right-4 rounded-md p-2 transition-colors duration-300 bg-black text-white hover:bg-black/80";
   
   const imageWrapperClasses = "overflow-hidden h-52 md:h-64";
   
   const imageClasses = "w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105";
   
-  const priceClasses = "text-lg font-semibold text-betty-brown";
+  const priceClasses = "text-lg font-medium text-brand-pink";
   
   return (
     <div className={cardClasses}>
@@ -31,8 +31,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onView, type }) => {
       </div>
       
       <div className="p-5">
-        <h3 className="font-playfair text-lg font-semibold mb-2">{product.name}</h3>
-        <p className="font-sans text-sm text-gray-600 mb-3 line-clamp-2">{product.shortDescription}</p>
+        <h3 className="font-playfair text-lg font-semibold mb-2 text-black">{product.name}</h3>
+        <p className="font-geist text-sm text-gray-600 mb-3 line-clamp-2">{product.shortDescription}</p>
         <p className={priceClasses}>$ {product.price.toLocaleString('es-CL')} CLP</p>
       </div>
       

@@ -103,23 +103,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
     }
   };
   
-  const inputClasses = "w-full px-4 py-2 border rounded-md font-montserrat focus:outline-none";
+  const inputClasses = "w-full px-4 py-2 border rounded-md font-geist focus:outline-none";
   
-  const inputFocusClasses = isBetty 
-    ? 'focus:border-[#FF69B4] focus:ring-1 focus:ring-[#FF69B4]' 
-    : 'focus:border-[#8B4513] focus:ring-1 focus:ring-[#8B4513]';
+  const inputFocusClasses = 'focus:border-black focus:ring-1 focus:ring-black';
   
-  const buttonClasses = `w-full py-3 px-6 rounded-md font-montserrat font-medium text-white transition-all
-    ${isBetty ? 'bg-[#FF69B4] hover:bg-[#FF1493]' : 'bg-[#8B4513] hover:bg-[#A0522D]'}
+  const buttonClasses = `w-full py-3 px-6 rounded-md font-geist font-medium text-white transition-colors
+    bg-black hover:bg-black/80
     ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`;
   
-  const errorClasses = "text-red-500 text-sm mt-1 font-montserrat";
+  const errorClasses = "text-red-500 text-sm mt-1 font-geist";
   
-  const successClasses = `text-center p-4 mb-6 rounded-md font-montserrat
-    ${isBetty ? 'bg-pink-100 text-pink-800' : 'bg-amber-100 text-amber-800'}`;
+  const successClasses = "text-center p-4 mb-6 rounded-md font-geist bg-gray-100 text-black";
   
   return (
-    <div className={`rounded-lg shadow-md p-6 ${isBetty ? 'bg-white' : 'bg-white'}`}>
+    <div className="rounded-lg shadow-sm p-6 bg-white border border-gray-200">
       {isSuccess && (
         <div className={successClasses}>
           ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo lo antes posible.
@@ -128,7 +125,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
       
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="name" className="block font-montserrat font-medium mb-2">
+          <label htmlFor="name" className="block font-geist font-medium mb-2">
             Nombre <span className="text-red-500">*</span>
           </label>
           <input
@@ -143,7 +140,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
         </div>
         
         <div className="mb-4">
-          <label htmlFor="email" className="block font-montserrat font-medium mb-2">
+          <label htmlFor="email" className="block font-geist font-medium mb-2">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -158,7 +155,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
         </div>
         
         <div className="mb-4">
-          <label htmlFor="phone" className="block font-montserrat font-medium mb-2">
+          <label htmlFor="phone" className="block font-geist font-medium mb-2">
             Teléfono
           </label>
           <input
@@ -173,7 +170,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
         </div>
         
         <div className="mb-6">
-          <label htmlFor="message" className="block font-montserrat font-medium mb-2">
+          <label htmlFor="message" className="block font-geist font-medium mb-2">
             Mensaje <span className="text-red-500">*</span>
           </label>
           <textarea

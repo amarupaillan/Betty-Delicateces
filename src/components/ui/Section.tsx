@@ -4,7 +4,7 @@ interface SectionProps {
   title?: string;
   subtitle?: string;
   children: ReactNode;
-  type?: 'primary' | 'secondary';
+  type?: 'white' | 'light';
   fullWidth?: boolean;
   className?: string;
 }
@@ -13,17 +13,17 @@ const Section: React.FC<SectionProps> = ({
   title, 
   subtitle, 
   children, 
-  type = 'primary', 
+  type = 'white', 
   fullWidth = false,
   className = ''
 }) => {
-  const isPrimary = type === 'primary';
+  const isWhite = type === 'white';
   
-  const sectionClasses = `py-20 ${isPrimary ? 'bg-white' : 'bg-betty-cream'} ${className}`;
+  const sectionClasses = `py-16 ${isWhite ? 'bg-white' : 'bg-gray-50'} ${className}`;
   
-  const titleClasses = `font-playfair text-3xl md:text-4xl font-bold mb-4 text-betty-brown`;
+  const titleClasses = "font-playfair text-3xl md:text-4xl font-bold mb-3 text-black";
   
-  const subtitleClasses = "font-sans text-gray-600 max-w-2xl mx-auto mb-16";
+  const subtitleClasses = "font-geist text-gray-600 max-w-2xl mx-auto mb-12";
   
   const containerClasses = fullWidth ? '' : 'container mx-auto px-4';
   
@@ -31,14 +31,13 @@ const Section: React.FC<SectionProps> = ({
     <section className={sectionClasses}>
       <div className={containerClasses}>
         {title && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className={titleClasses}>{title}</h2>
             {subtitle && 
               <p className={subtitleClasses}>
                 {subtitle}
               </p>
             }
-            <div className="w-24 h-1 bg-betty-brown mx-auto mt-4 opacity-75"></div>
           </div>
         )}
         {children}

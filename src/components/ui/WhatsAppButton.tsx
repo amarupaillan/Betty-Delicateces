@@ -18,7 +18,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   
   const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
   
-  const buttonClasses = "fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-md shadow-lg bg-betty-brown text-white transition-transform hover:scale-105";
+  const buttonClasses = "fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-md shadow-lg bg-black text-white transition-transform hover:scale-105";
   
   return (
     <a 

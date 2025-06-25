@@ -1,44 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  
-  // Handle scroll effect for transparent to solid header
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  const headerClasses = `fixed w-full z-50 transition-all duration-300 ${
-    isScrolled 
-      ? 'bg-white shadow-md text-gray-800' 
-      : 'bg-transparent text-gray-800'
-  }`;
+  const headerClasses = "fixed w-full z-50 bg-white shadow-sm";
   
-  const navItemClasses = `font-sans text-sm lg:text-base transition-all duration-300 
-    hover:text-betty-brown relative group py-2`;
+  const navItemClasses = "font-geist text-sm lg:text-base transition-colors duration-300 hover:text-black/70";
   
-  const activeNavItemClasses = `after:absolute after:bottom-0 after:left-0 after:w-full 
-    after:h-0.5 after:bg-betty-brown text-betty-brown`;
+  const activeNavItemClasses = "font-medium text-black";
   
   return (
     <header className={headerClasses}>
-      <div className="container mx-auto px-4 py-3 lg:py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="z-10">
             <Logo />
@@ -69,9 +48,9 @@ const Header: React.FC = () => {
             
             <Link 
               to="/contacto" 
-              className={`font-sans px-5 py-2 rounded-md 
-                border-2 border-betty-brown text-betty-brown hover:bg-betty-brown hover:text-white
-                transition-colors duration-300 ${location.pathname === '/contacto' ? 'bg-betty-brown text-white' : ''}`}
+              className={`font-geist px-5 py-2 rounded-md text-white
+                ${location.pathname === '/contacto' ? 'bg-black' : 'bg-black/90 hover:bg-black'}
+                transition-colors duration-300`}
             >
               Contacto
             </Link>
@@ -79,7 +58,7 @@ const Header: React.FC = () => {
           
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden z-10 text-gray-800 hover:text-betty-brown transition-colors"
+            className="lg:hidden z-10 text-black"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
@@ -97,8 +76,8 @@ const Header: React.FC = () => {
             <nav className="container mx-auto px-4 flex flex-col space-y-4">
               <Link 
                 to="/"
-                className={`font-sans text-lg py-2 border-b border-gray-100 ${
-                  location.pathname === '/' ? 'text-betty-brown font-medium' : 'text-gray-800'
+                className={`font-geist text-lg py-2 border-b border-gray-100 ${
+                  location.pathname === '/' ? 'text-black font-medium' : 'text-black/80'
                 }`}
                 onClick={toggleMenu}
               >
@@ -107,8 +86,8 @@ const Header: React.FC = () => {
               
               <Link 
                 to="/productos"
-                className={`font-sans text-lg py-2 border-b border-gray-100 ${
-                  location.pathname === '/productos' ? 'text-betty-brown font-medium' : 'text-gray-800'
+                className={`font-geist text-lg py-2 border-b border-gray-100 ${
+                  location.pathname === '/productos' ? 'text-black font-medium' : 'text-black/80'
                 }`}
                 onClick={toggleMenu}
               >
@@ -117,8 +96,8 @@ const Header: React.FC = () => {
               
               <Link 
                 to="/tentaciones"
-                className={`font-sans text-lg py-2 border-b border-gray-100 ${
-                  location.pathname === '/tentaciones' ? 'text-betty-brown font-medium' : 'text-gray-800'
+                className={`font-geist text-lg py-2 border-b border-gray-100 ${
+                  location.pathname === '/tentaciones' ? 'text-black font-medium' : 'text-black/80'
                 }`}
                 onClick={toggleMenu}
               >
@@ -127,10 +106,10 @@ const Header: React.FC = () => {
               
               <Link 
                 to="/contacto"
-                className={`font-sans text-lg py-2 mt-2 text-center rounded-md ${
+                className={`font-geist text-lg py-2 mt-2 text-center rounded-md text-white ${
                   location.pathname === '/contacto' 
-                    ? 'bg-betty-brown text-white' 
-                    : 'border-2 border-betty-brown text-betty-brown'
+                    ? 'bg-black' 
+                    : 'bg-black/90'
                 }`}
                 onClick={toggleMenu}
               >

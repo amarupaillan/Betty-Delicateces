@@ -32,11 +32,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, type }) =
   
   const modalClasses = "relative max-w-4xl w-full bg-white rounded-lg shadow-xl overflow-hidden";
   
-  const closeButtonClasses = "absolute top-4 right-4 text-gray-500 hover:text-betty-brown transition-colors";
+  const closeButtonClasses = "absolute top-4 right-4 text-gray-500 hover:text-black transition-colors";
   
-  const ctaButtonClasses = "px-6 py-3 rounded-md font-sans text-white transition-all bg-betty-brown hover:bg-betty-dark-brown";
+  const ctaButtonClasses = "px-6 py-3 rounded-md font-geist text-white transition-colors bg-black hover:bg-black/80";
   
-  const priceClasses = "text-2xl font-semibold text-betty-brown";
+  const priceClasses = "text-2xl font-medium text-brand-pink";
   
   return (
     <div className={overlayClasses} onClick={onClose}>
@@ -59,19 +59,19 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, type }) =
           </div>
           
           <div className="p-8 md:w-1/2">
-            <h2 className="font-playfair text-2xl font-semibold mb-2">{product.name}</h2>
+            <h2 className="font-playfair text-2xl font-semibold mb-2 text-black">{product.name}</h2>
             
             <p className={priceClasses}>$ {product.price.toLocaleString('es-CL')} CLP</p>
             
             <div className="my-6">
-              <h3 className="font-playfair text-lg font-semibold mb-2 text-betty-brown">Descripción</h3>
-              <p className="font-sans text-gray-700">{product.description}</p>
+              <h3 className="font-playfair text-lg font-medium mb-2 text-black">Descripción</h3>
+              <p className="font-geist text-gray-700">{product.description}</p>
             </div>
             
             {product.ingredients && (
               <div className="mb-8">
-                <h3 className="font-playfair text-lg font-semibold mb-2 text-betty-brown">Ingredientes</h3>
-                <p className="font-sans text-gray-700">{product.ingredients}</p>
+                <h3 className="font-playfair text-lg font-medium mb-2 text-black">Ingredientes</h3>
+                <p className="font-geist text-gray-700">{product.ingredients}</p>
               </div>
             )}
             

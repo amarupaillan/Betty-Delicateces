@@ -5,14 +5,11 @@ export default {
     extend: {
       fontFamily: {
         'playfair': ['"Playfair Display"', 'serif'],
-        'sans': ['Inter', 'sans-serif'],
+        'geist': ['Geist', 'Inter', 'sans-serif'],
       },
       colors: {
-        'betty-brown': '#8B4513',
-        'betty-light-brown': '#D2B48C',
-        'betty-beige': '#F5DEB3',
-        'betty-cream': '#FFF8E1',
-        'betty-dark-brown': '#6B3304',
+        'brand-pink': '#FF69B4',
+        'brand-light-pink': '#FFCCE1',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
