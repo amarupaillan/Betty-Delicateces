@@ -4,7 +4,6 @@ export interface Product {
   price: number;
   shortDescription: string;
   description: string;
-  ingredients?: string;
   category: string;
   image: string;
   featured?: boolean;

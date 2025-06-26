@@ -103,10 +103,10 @@ const Home: React.FC = () => {
       }}>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">
-            ¿Buscas algo especial para tu evento?
+            Productos por Mayor
           </h2>
           <p className="font-geist text-white text-lg mb-8 max-w-2xl mx-auto">
-            Ofrecemos servicios personalizados de catering, pastelería y panadería para eventos, celebraciones y ocasiones especiales. ¡Contáctanos y hagamos algo único juntos!
+            Vendemos productos por mayor a cafeterías y locales comerciales. Ofrecemos empanadas y productos de panadería de alta calidad, elaborados artesanalmente y a precios competitivos para su negocio.
           </p>
           <Link
             to="/contacto"
