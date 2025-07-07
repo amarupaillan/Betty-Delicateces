@@ -36,7 +36,7 @@ const products: Product[] = [
     name: 'Empanada de Camarón y Queso',
     price: 3200,
     shortDescription: 'Empanada rellena de camarones y queso derretido',
-    description: 'Empanada artesanal con masa hojaldrada rellena de camarones salteados con especias y queso fundido. Una combinación perfecta entre los sabores del mar y la cremosidad del queso, con una textura crujiente por fuera y suave por dentro.',
+    description: 'Empanada artesanal con masa artesanal rellena de camarones salteados con especias y queso Gauda. Una combinación perfecta entre los sabores del mar y la cremosidad del queso, con una textura crujiente por fuera y suave por dentro.',
     category: 'Empanadas',
     image: '/Products/camaron queso 3200.JPG',
     featured: true
@@ -46,7 +46,7 @@ const products: Product[] = [
     name: 'Empanada de Champiñón y Queso',
     price: 3200,
     shortDescription: 'Empanada rellena de champiñones y queso',
-    description: 'Empanada artesanal con fina masa de hojaldre rellena de champiñones salteados y queso fundido. Una opción vegetariana llena de sabor, con los champiñones aportando un toque terroso y jugoso que complementa la cremosidad del queso.',
+    description: 'Empanada artesanal con fina masa rellena de champiñones salteados y queso fundido. Una opción vegetariana llena de sabor, con los champiñones aportando un toque terroso y jugoso que complementa la cremosidad del queso.',
     category: 'Empanadas',
     image: '/Products/champiñon queso 3200.JPG'
   },
@@ -139,7 +139,7 @@ const products: Product[] = [
     name: 'Empanada Napolitana',
     price: 2900,
     shortDescription: 'Empanada con sabores italianos',
-    description: 'Empanada artesanal inspirada en los sabores italianos, rellena de queso mozzarella, tomate, orégano y jamón. La masa crujiente contrasta con el relleno jugoso y fundido, creando una experiencia gastronómica que combina lo mejor de la comida chilena e italiana.',
+    description: 'Empanada artesanal inspirada en los sabores italianos, rellena de queso Gauda, tomate, orégano y jamón. La masa crujiente contrasta con el relleno jugoso y fundido, creando una experiencia gastronómica que combina lo mejor de la comida chilena e italiana.',
     category: 'Empanadas',
     image: '/Products/napolitana 2900.JPG',
     featured: true
@@ -168,7 +168,7 @@ const products: Product[] = [
     name: 'Empanada de Pino Merquén',
     price: 2900,
     shortDescription: 'Tradicional empanada chilena con merquén',
-    description: 'Empanada tradicional chilena rellena de pino (carne picada, cebolla, pasas, huevo y aceitunas) con un toque de merquén, un condimento típico chileno a base de ají ahumado. El merquén agrega un sabor ahumado y un ligero picante que realza todos los sabores del relleno.',
+    description: 'Empanada tradicional chilena rellena de pino (carne picada, cebolla, huevo y aceitunas) con un toque de merquén, un condimento típico chileno a base de ají ahumado. El merquén agrega un sabor ahumado y un ligero picante que realza todos los sabores del relleno.',
     category: 'Empanadas',
     image: '/Products/pino merquen 2900.JPG'
   },
@@ -177,7 +177,7 @@ const products: Product[] = [
     name: 'Empanada de Pino Tradicional',
     price: 2900,
     shortDescription: 'Clásica empanada chilena de pino',
-    description: 'Auténtica empanada chilena con el tradicional relleno de pino: carne picada salteada con cebolla, condimentada con comino y ají, complementada con pasas, aceituna y un cuarto de huevo duro. La masa se hornea hasta conseguir un dorado perfecto, resultando en uno de los platos más emblemáticos de Chile.',
+    description: 'Auténtica empanada chilena con el tradicional relleno de pino: carne picada salteada con cebolla, condimentada con comino y ají, aceituna y un cuarto de huevo duro. La masa se hornea hasta conseguir un dorado perfecto, resultando en uno de los platos más emblemáticos de Chile.',
     category: 'Empanadas',
     image: '/Products/pino tradicional 2900.JPG',
     featured: true
@@ -196,7 +196,7 @@ const products: Product[] = [
     name: 'Empanada de Pollo Champiñón a la Crema',
     price: 3200,
     shortDescription: 'Empanada con relleno cremoso de pollo y champiñones',
-    description: 'Exquisita empanada con un cremoso relleno de pollo desmenuzado y champiñones salteados en salsa bechamel. La combinación del suave pollo, los champiñones y la salsa cremosa, envueltos en una masa hojaldrada, crea una experiencia gastronómica sofisticada.',
+    description: 'Exquisita empanada con un cremoso relleno de pollo y champiñones salteados en salsa bechamel. La combinación del suave pollo, los champiñones y la salsa cremosa, envueltos en una masa hojaldrada, crea una experiencia gastronómica sofisticada.',
     category: 'Empanadas',
     image: '/Products/pollo champiñon a la crema 3200.JPG'
   },
@@ -242,7 +242,7 @@ const products: Product[] = [
     name: 'Empanada Vegetariana de Espinaca',
     price: 3200,
     shortDescription: 'Empanada vegetariana con espinacas y queso',
-    description: 'Empanada vegetariana elaborada con masa hojaldrada y rellena de una mezcla de espinacas salteadas con cebolla y queso. Una opción saludable que no sacrifica sabor, con el perfecto equilibrio entre los vegetales y la cremosidad del queso.',
+    description: 'Empanada vegetariana elaborada con masa artesanal y rellena de una mezcla de espinacas salteadas con cebolla y queso. Una opción saludable que no sacrifica sabor, con el perfecto equilibrio entre los vegetales y la cremosidad del queso.',
     category: 'Empanadas',
     image: '/Products/vegetariana de espinaca 3200.JPG'
   }

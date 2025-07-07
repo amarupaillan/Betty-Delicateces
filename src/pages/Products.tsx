@@ -41,7 +41,7 @@ const Products: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="relative py-40 bg-cover bg-center" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
           <h1 className="font-playfair text-4xl md:text-6xl font-bold mb-4">
@@ -110,7 +110,7 @@ const Products: React.FC = () => {
         </div>
       </Section>
       
-      <WhatsAppButton phoneNumber="600123456" type="betty" />
+      <WhatsAppButton phoneNumber="+56958797869" type="betty" />
     </>
   );
 };

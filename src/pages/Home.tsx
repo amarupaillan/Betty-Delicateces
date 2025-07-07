@@ -7,6 +7,23 @@ import WhatsAppButton from '../components/ui/WhatsAppButton';
 import { Product } from '../types';
 import { getFeaturedProducts } from '../data/products';
 
+// Import all photos
+import dsc0231 from '../Photos/_DSC0231.JPG';
+import dsc0236 from '../Photos/_DSC0236.JPG';
+import dsc0240 from '../Photos/_DSC0240.JPG';
+import dsc0752 from '../Photos/_DSC0752.JPG';
+import dsc0754 from '../Photos/_DSC0754.JPG';
+import dsc0755 from '../Photos/_DSC0755.JPG';
+import dsc0866 from '../Photos/_DSC0866.JPG';
+import dsc0867 from '../Photos/_DSC0867.JPG';
+import dsc0871 from '../Photos/_DSC0871.JPG';
+import dsc0878 from '../Photos/_DSC0878.JPG';
+import dsc0880 from '../Photos/_DSC0880.JPG';
+import dsc0883 from '../Photos/_DSC0883.JPG';
+import dsc0885 from '../Photos/_DSC0885.JPG';
+import dsc0888 from '../Photos/_DSC0888.JPG';
+import dsc0895 from '../Photos/_DSC0895.JPG';
+
 const Home: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   
@@ -16,11 +33,30 @@ const Home: React.FC = () => {
     setFeaturedProducts(products);
   }, []);
   
+  // Gallery photos
+  const galleryPhotos = [
+    { src: dsc0231, alt: 'Betty Delicateces' },
+    { src: dsc0236, alt: 'Betty Delicateces' },
+    { src: dsc0240, alt: 'Betty Delicateces' },
+    { src: dsc0752, alt: 'Betty Delicateces' },
+    { src: dsc0754, alt: 'Betty Delicateces' },
+    { src: dsc0755, alt: 'Betty Delicateces' },
+    { src: dsc0866, alt: 'Betty Delicateces' },
+    { src: dsc0867, alt: 'Betty Delicateces' },
+    { src: dsc0871, alt: 'Betty Delicateces' },
+    { src: dsc0878, alt: 'Betty Delicateces' },
+    { src: dsc0880, alt: 'Betty Delicateces' },
+    { src: dsc0883, alt: 'Betty Delicateces' },
+    { src: dsc0885, alt: 'Betty Delicateces' },
+    { src: dsc0888, alt: 'Betty Delicateces' },
+    { src: dsc0895, alt: 'Betty Delicateces' },
+  ];
+  
   return (
     <>
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center flex items-center" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${dsc0867})` 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in-up">
@@ -49,15 +85,16 @@ const Home: React.FC = () => {
       {/* About Section */}
       <Section 
         title="Nuestra Cafetería" 
-        subtitle="Desde 2015 ofreciendo los mejores productos de panadería y pastelería"
+        subtitle="Desde 2022 ofreciendo los mejores productos de panadería y pastelería"
         type="white"
       >
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 flex justify-center">
             <img 
-              src="https://images.pexels.com/photos/8477067/pexels-photo-8477067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              src={dsc0895} 
               alt="Betty Delicateces Cafetería" 
-              className="rounded-lg shadow-sm w-full h-auto"
+              className="rounded-lg shadow-sm w-80
+               h-auto"
             />
           </div>
           <div className="md:w-1/2">
@@ -97,9 +134,28 @@ const Home: React.FC = () => {
         </div>
       </Section>
       
+      {/* Photo Gallery */}
+      <Section
+        title="Nuestra Galería"
+        subtitle="Descubre nuestro ambiente y productos en imágenes"
+        type="white"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {galleryPhotos.map((photo, index) => (
+            <div key={index} className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+      
       {/* CTA Section */}
       <section className="py-24 bg-cover bg-center relative" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/6487566/pexels-photo-6487566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${dsc0754})` 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">
@@ -117,7 +173,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <WhatsAppButton phoneNumber="600123456" type="betty" />
+      <WhatsAppButton phoneNumber="+56958797869" type="betty" />
     </>
   );
 };

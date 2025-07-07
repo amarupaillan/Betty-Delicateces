@@ -4,6 +4,8 @@ import ProductGrid from '../components/ui/ProductGrid';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
 import { Product } from '../types';
 import { getTentacionesProducts } from '../data/products';
+import heroImage from '../Photos/Screenshot 2025-07-07 at 15.03.05.png';
+import dsc0888 from '../Photos/_DSC0888.JPG';
 
 const Tentaciones: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -18,7 +20,7 @@ const Tentaciones: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="relative py-32 bg-cover bg-center" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${heroImage})` 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-2">
@@ -37,12 +39,12 @@ const Tentaciones: React.FC = () => {
         subtitle="Tradición y auténtico sabor en cada bocado"
         type="white"
       >
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <img 
-              src="https://images.pexels.com/photos/2383871/pexels-photo-2383871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              src={dsc0888} 
               alt="Tentaciones de la Reina - Panadería" 
-              className="rounded-lg shadow-sm w-full h-auto"
+              className="rounded-lg shadow-sm w-80 h-auto"
             />
           </div>
           <div className="md:w-1/2">
@@ -71,7 +73,7 @@ const Tentaciones: React.FC = () => {
       
       {/* CTA Section */}
       <section className="py-24 bg-cover bg-center relative" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/4916558/pexels-photo-4916558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/4916558/pexels-photo-4916558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">
@@ -89,7 +91,7 @@ const Tentaciones: React.FC = () => {
         </div>
       </section>
       
-      <WhatsAppButton phoneNumber="600123456" type="tentaciones" />
+      <WhatsAppButton phoneNumber="+56958797869" type="tentaciones" />
     </>
   );
 };

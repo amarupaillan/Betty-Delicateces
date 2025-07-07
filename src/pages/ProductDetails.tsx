@@ -136,7 +136,7 @@ const ProductDetails: React.FC = () => {
         </Section>
       )}
       
-      <WhatsAppButton phoneNumber="600123456" type="betty" />
+      <WhatsAppButton phoneNumber="+56958797869" type="betty" />
     </>
   );
 };

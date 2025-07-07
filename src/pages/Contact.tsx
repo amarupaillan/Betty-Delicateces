@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="relative py-24 bg-cover bg-center" style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" 
       }}>
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
@@ -33,9 +33,12 @@ const Contact: React.FC = () => {
                 <Phone className="text-brand-pink mr-4 mt-1" size={20} />
                 <div>
                   <h3 className="font-playfair font-semibold mb-1 text-black">Teléfono</h3>
-                  <a href="tel:+56600123456" className="font-geist text-gray-700 hover:text-black transition-colors">
-                    +56 600 123 456
+                  <a href="tel:+56958797869" className="font-geist text-gray-700 hover:text-black transition-colors">
+                    +56 9 5879 7869
                   </a>
+                  <p className="font-geist text-gray-600 mt-2">
+                    Cualquier consulta, cualquier producto, compra tus productos desde este número. Di qué producto quieres, envía una foto y nosotros te lo llevaremos a la casa. Coordina en este número.
+                  </p>
                 </div>
               </div>
               
@@ -149,7 +152,7 @@ const Contact: React.FC = () => {
         </div>
       </Section>
       
-      <WhatsAppButton phoneNumber="600123456" type="betty" />
+      <WhatsAppButton phoneNumber="+56958797869" type="betty" />
     </>
   );
 };

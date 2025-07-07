@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           
           <div className="flex space-x-4">
             <a 
-              href="tel:+56600123456" 
+              href="tel:+56958797869" 
               className="text-gray-600 hover:text-black transition-colors duration-300"
               aria-label="Teléfono"
             >
