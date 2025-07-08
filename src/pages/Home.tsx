@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Section from '../components/ui/Section';
 import ProductGrid from '../components/ui/ProductGrid';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
+import LocationMap from '../components/ui/LocationMap';
 import { Product } from '../types';
 import { getFeaturedProducts } from '../data/products';
 
@@ -27,6 +28,9 @@ import dsc0895 from '../Photos/_DSC0895.JPG';
 const Home: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+  const mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6";
+  const address = "José Manuel Infante 1206, Providencia, Región Metropolitana";
   
   useEffect(() => {
     // Fetch featured products
@@ -61,7 +65,7 @@ const Home: React.FC = () => {
     { src: dsc0895, alt: 'Betty Delicateces' },
   ];
   
-  const heroImage = isMobile ? dsc0871 : dsc0867;
+  const heroImage = dsc0878;
   
   return (
     <>
@@ -70,7 +74,7 @@ const Home: React.FC = () => {
         className="relative h-[85vh] md:h-screen bg-cover bg-center flex items-center" 
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${heroImage})`,
-          backgroundPosition: isMobile ? 'center center' : 'center center'
+          backgroundPosition: 'center center'
         }}
       >
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
@@ -186,6 +190,15 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
+      
+      {/* Map Section */}
+      <Section type="light" title="Encuéntranos" subtitle="Visítanos en nuestra ubicación">
+        <LocationMap 
+          address={address}
+          mapUrl={mapUrl}
+          type="betty"
+        />
+      </Section>
       
       <WhatsAppButton phoneNumber="+56958797869" type="betty" />
     </>

@@ -3,9 +3,12 @@ import Section from '../components/ui/Section';
 import ContactForm from '../components/ui/ContactForm';
 import LocationMap from '../components/ui/LocationMap';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
-import { Phone, Mail, Clock, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, Instagram, Facebook, ShoppingBag, ExternalLink } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6";
+  const address = "José Manuel Infante 1206, Providencia, Región Metropolitana";
+  
   return (
     <>
       {/* Hero Section */}
@@ -56,10 +59,14 @@ const Contact: React.FC = () => {
                 <MapPin className="text-brand-pink mr-3 md:mr-4 mt-1 hidden sm:block" size={20} />
                 <div>
                   <h3 className="font-playfair font-semibold mb-1 text-black">Dirección</h3>
-                  <address className="font-geist text-gray-700 not-italic text-sm md:text-base">
-                    Av. Principal 123<br />
-                    Santiago, Chile
-                  </address>
+                  <a 
+                    href={mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-geist text-gray-700 hover:text-black transition-colors text-sm md:text-base block"
+                  >
+                    {address}
+                  </a>
                 </div>
               </div>
               
@@ -76,25 +83,47 @@ const Contact: React.FC = () => {
               </div>
             </div>
             
-            <h3 className="font-playfair text-lg md:text-xl font-semibold mb-3 md:mb-4 text-black">Síguenos</h3>
-            <div className="flex space-x-3 md:space-x-4">
+            <h3 className="font-playfair text-lg md:text-xl font-semibold mb-3 md:mb-4 text-black">Síguenos y Pide Online</h3>
+            <div className="flex flex-wrap gap-3 md:gap-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/bettydelicateces/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-brand-pink transition-colors"
+                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-[#E1306C] transition-colors flex items-center"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
+                <span className="ml-2 text-xs md:text-sm">Instagram</span>
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://web.facebook.com/bettydelicateces/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-brand-pink transition-colors"
+                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-[#1877F2] transition-colors flex items-center"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
+                <span className="ml-2 text-xs md:text-sm">Facebook</span>
+              </a>
+              <a 
+                href="https://www.ubereats.com/store/betty-delicateces/0YuxRRYiQHiKXbAjpGDaAA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-[#06C167] transition-colors flex items-center"
+                aria-label="Uber Eats"
+              >
+                <ShoppingBag size={18} />
+                <span className="ml-2 text-xs md:text-sm">Uber Eats</span>
+              </a>
+              <a 
+                href="https://www.pedidosya.cl/restaurantes/santiago/betty-delicateces-252f2fa7-8cbb-4265-ae0d-210adeecd5fa-menu" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gray-100 p-2 md:p-3 rounded-md text-gray-700 hover:text-[#FF0000] transition-colors flex items-center"
+                aria-label="PedidosYa"
+              >
+                <ExternalLink size={18} />
+                <span className="ml-2 text-xs md:text-sm">PedidosYa</span>
               </a>
             </div>
           </div>
@@ -109,7 +138,8 @@ const Contact: React.FC = () => {
       <Section type="light">
         <h2 className="font-playfair text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-black text-center">Nuestra Ubicación</h2>
         <LocationMap 
-          address="Av. Principal 123, Santiago, Chile" 
+          address={address}
+          mapUrl={mapUrl}
           type="betty"
         />
       </Section>

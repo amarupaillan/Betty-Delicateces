@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/ui/Section';
 import ProductGrid from '../components/ui/ProductGrid';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
+import LocationMap from '../components/ui/LocationMap';
 import { Product } from '../types';
 import { getAllProducts } from '../data/products';
 
@@ -10,6 +11,9 @@ const Products: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  
+  const mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6";
+  const address = "José Manuel Infante 1206, Providencia, Región Metropolitana";
   
   useEffect(() => {
     // Fetch all products
@@ -109,6 +113,15 @@ const Products: React.FC = () => {
             </Link>
           </div>
         </div>
+      </Section>
+      
+      {/* Map Section */}
+      <Section type="white" title="Nuestra Ubicación" subtitle="Visita nuestra tienda">
+        <LocationMap 
+          address={address}
+          mapUrl={mapUrl}
+          type="betty"
+        />
       </Section>
       
       <WhatsAppButton phoneNumber="+56958797869" type="betty" />

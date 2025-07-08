@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/ui/Section';
 import ProductGrid from '../components/ui/ProductGrid';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
+import LocationMap from '../components/ui/LocationMap';
 import { Product } from '../types';
 import { getTentacionesProducts } from '../data/products';
 import heroImage from '../Photos/Screenshot 2025-07-07 at 15.03.05.png';
@@ -10,6 +11,9 @@ import dsc0888 from '../Photos/_DSC0888.JPG';
 
 const Tentaciones: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  
+  const mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6";
+  const address = "José Manuel Infante 1206, Providencia, Región Metropolitana";
   
   useEffect(() => {
     // Fetch tentaciones products
@@ -91,6 +95,15 @@ const Tentaciones: React.FC = () => {
           </Link>
         </div>
       </section>
+      
+      {/* Map Section */}
+      <Section type="white" title="Visítanos" subtitle="Encuéntranos en nuestra tienda">
+        <LocationMap 
+          address={address}
+          mapUrl={mapUrl}
+          type="tentaciones"
+        />
+      </Section>
       
       <WhatsAppButton phoneNumber="+56958797869" type="tentaciones" />
     </>

@@ -38,18 +38,18 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       </div>
       
       {/* WhatsApp button */}
-      <a 
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={buttonClasses}
-        aria-label="Contáctanos por WhatsApp"
+    <a 
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={buttonClasses}
+      aria-label="Contáctanos por WhatsApp"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
         onClick={() => setShowTooltip(false)}
-      >
+    >
         <MessageCircle size={28} fill="white" />
-      </a>
+    </a>
     </div>
   );
 };

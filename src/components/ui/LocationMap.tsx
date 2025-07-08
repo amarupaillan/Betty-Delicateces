@@ -1,46 +1,39 @@
 import React from 'react';
 
 interface LocationMapProps {
-  address: string;
+  address?: string;
+  mapUrl?: string;
   type: 'betty' | 'tentaciones';
 }
 
-const LocationMap: React.FC<LocationMapProps> = ({ address, type }) => {
-  // Convert address to URL-encoded format
-  const encodedAddress = encodeURIComponent(address);
-  const mapSrc = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodedAddress}`;
-  
-  // Since we don't have an actual API key, we'll use a placeholder map image
-  const placeholderImageUrl = "https://images.pexels.com/photos/1203808/pexels-photo-1203808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
-  
+const LocationMap: React.FC<LocationMapProps> = ({ 
+  address = "Av. Principal 123, Santiago, Chile", 
+  mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6", 
+  type 
+}) => {
   return (
     <div className="relative rounded-lg overflow-hidden shadow-md h-80">
-      {/* In a real implementation, you would use: */}
-      {/* <iframe
+      {/* Use an iframe to embed Google Maps */}
+      <iframe
         title="Location Map"
         width="100%"
         height="100%"
         frameBorder="0"
-        src={mapSrc}
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.083732717586!2d-70.61553282392965!3d-33.41874919917834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cef66a9597c1%3A0x201c554fc904ff40!2sBetty%20Delicateces!5e0!3m2!1ses!2scl!4v1688516846903!5m2!1ses!2scl"
         allowFullScreen
-      ></iframe> */}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
       
-      {/* For the demo, we'll use a placeholder image */}
-      <img 
-        src={placeholderImageUrl} 
-        alt="Mapa de ubicación" 
-        className="w-full h-full object-cover"
-      />
-      
-      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-        <div className="text-center text-white p-4">
-          <h3 className="font-playfair text-xl mb-2">Nuestra Ubicación</h3>
-          <p className="font-montserrat">{address}</p>
+      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70">
+        <div className="text-center text-white p-2 md:p-4">
+          <h3 className="font-playfair text-base md:text-lg mb-1 md:mb-2">Nuestra Ubicación</h3>
+          <p className="font-montserrat text-xs md:text-sm">{address}</p>
           <a 
-            href={`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`}
+            href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-block mt-4 px-4 py-2 rounded-full text-sm font-medium transition-colors
+            className={`inline-block mt-1 md:mt-2 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-colors
               ${type === 'betty' ? 'bg-[#FF69B4] hover:bg-[#FF1493]' : 'bg-[#8B4513] hover:bg-[#A0522D]'}`}
           >
             Ver en Google Maps
