@@ -7,7 +7,7 @@ interface LocationMapProps {
 }
 
 const LocationMap: React.FC<LocationMapProps> = ({ 
-  address = "Av. Principal 123, Santiago, Chile", 
+  address = "Av. Alcalde Fernando Castillo Velazco 6978, La Reina, Santiago", 
   mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6", 
   type 
 }) => {
@@ -19,7 +19,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
         width="100%"
         height="100%"
         frameBorder="0"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.083732717586!2d-70.61553282392965!3d-33.41874919917834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cef66a9597c1%3A0x201c554fc904ff40!2sBetty%20Delicateces!5e0!3m2!1ses!2scl!4v1688516846903!5m2!1ses!2scl"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0745026931573!2d-70.56855492392858!3d-33.44528549917894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cef66a9597c1%3A0x201c554fc904ff40!2sAv.%20Alcalde%20Fernando%20Castillo%20Velazco%206978%2C%20La%20Reina%2C%20Santiago%2C%20Chile!5e0!3m2!1ses!2scl!4v1688516846903!5m2!1ses!2scl"
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

@@ -7,7 +7,7 @@ import { Phone, Mail, Clock, MapPin, Instagram, Facebook, ShoppingBag, ExternalL
 
 const Contact: React.FC = () => {
   const mapUrl = "https://maps.app.goo.gl/dp4dKQenzF8tu2JZ6";
-  const address = "José Manuel Infante 1206, Providencia, Región Metropolitana";
+  const address = "Av. Alcalde Fernando Castillo Velazco 6978, La Reina, Santiago";
   
   return (
     <>
