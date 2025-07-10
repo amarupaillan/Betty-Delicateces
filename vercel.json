@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.+\\.(jpg|jpeg|png|JPG))",
+      "source": "/(.*\\.(jpg|jpeg|png|JPG))",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
