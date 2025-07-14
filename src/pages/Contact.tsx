@@ -75,9 +75,8 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-playfair font-semibold mb-1 text-black">Horario</h3>
                   <ul className="font-geist text-gray-700 space-y-1 text-sm md:text-base">
-                    <li>Lunes a Viernes: 9:00 - 19:00</li>
-                    <li>Sábados: 10:00 - 14:00</li>
-                    <li>Domingos: Cerrado</li>
+                    <li>Lunes a sábado: 8:30 - 21:00</li>
+                    <li>Domingo: 8:30 - 20:00</li>
                   </ul>
                 </div>
               </div>
